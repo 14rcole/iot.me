@@ -1,18 +1,13 @@
 var mongoose = require('mongoose');
 
-// declare schema
 var datasetSchema = new mongoose.Schema({
-    index: {type: String, required: true, index: {unique: true}},
-    name: {type: String, required: true},
-    owner_name: {type: String, required: true},
-    read_key: {type: String},
-    write_key: {type: String},
-    public: {type: Boolean, default: false},
-    data: {type: Object},
-    entries_number: {type: Number, default: 0},
-    created_at: {type: Date, default: Date.now},
-    last_entry_at: {type: Date}
+    day_of_week: {type: String, required: true},
+    day: {type: String, required: true},
+    month: {type: String, required: true},
+    year: {type: String, required: true},
+    date: {type: Date, required: true},
+    zone: {type: String, required: true},
+    occupied: {type: boolean, required: true}
 });
 
-// export schema
 mongoose.model('Dataset', datasetSchema);
